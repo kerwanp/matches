@@ -1,6 +1,6 @@
 {
   "name": "Matches",
-  "version": "dev",
+  "version": "1.0.0-dev",
   "description": "Matches - Sync games with your lights",
   "homepage": "https://github.com/kerwanp/matches",
   "author": {
@@ -39,8 +39,7 @@
     "test": "npm run postinstall:web && ng test",
     "e2e": "npm run build:prod && mocha --timeout 300000 --require ts-node/register e2e/**/*.spec.ts",
     "version": "conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "lint": "ng lint",
-    "postinstall": "install-app-deps"
+    "lint": "ng lint"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.800.2",
