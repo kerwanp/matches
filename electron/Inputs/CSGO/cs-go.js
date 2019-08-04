@@ -51,7 +51,7 @@ var CSGO = /** @class */ (function (_super) {
             _this.gamePath = steamPath + '/steamapps/common/Counter-Strike Global Offensive';
             fs.access(_this.gamePath + "/csgo/cfg/gamestate_integration_matches.cfg", fs.constants.F_OK, function (_err) {
                 if (_err) {
-                    fs.copyFile('./assets/gamestate_integration_matches.cfg', _this.gamePath + "/csgo/cfg/gamestate_integration_matches.cfg", function (__err) {
+                    fs.copyFile('./static/gamestate_integration_matches.cfg', _this.gamePath + "/csgo/cfg/gamestate_integration_matches.cfg", function (__err) {
                         if (__err) {
                             throw __err;
                         }

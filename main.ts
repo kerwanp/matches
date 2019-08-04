@@ -88,7 +88,7 @@ function createWindow() {
 }
 
 function createTrail() {
-  tray = new Tray('assets/logo.png');
+  tray = new Tray(__dirname + '/static/logo.png');
   const contextMenu = Menu.buildFromTemplate([
     { label: 'Exit', type: 'normal', click: () => quitApp()}
   ]);

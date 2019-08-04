@@ -50,7 +50,7 @@ export class CSGO extends InputLoader {
       fs.access(`${this.gamePath}/csgo/cfg/gamestate_integration_matches.cfg`, fs.constants.F_OK, (_err) => {
         if (_err) {
           fs.copyFile(
-            './assets/gamestate_integration_matches.cfg',
+            './static/gamestate_integration_matches.cfg',
             `${this.gamePath}/csgo/cfg/gamestate_integration_matches.cfg`,
             (__err) => {
               if (__err) {
