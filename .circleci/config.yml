@@ -18,6 +18,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - store_artifacts:
+          path: "./release/matches ${CI_PULL_REQUEST}.exe"
+          prefix: release
   publish-release:
     docker:
       - image: cibuilds/github:0.10
