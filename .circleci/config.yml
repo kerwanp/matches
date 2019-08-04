@@ -12,6 +12,9 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
+      - run: "export PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g') >> $BASH_ENV"
+      - run: "echo ${PACKAGE_VERSION}"
+      - run: "echo $(my-binary --version)"
       - run: npm install
       - run: npm run build:prod
       - save_cache:
@@ -19,7 +22,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - store_artifacts:
-          path: "./release/matches ${CI_PULL_REQUEST}.exe"
+          path: ./release/matches {{ checksum "package.json"}}.exe
           prefix: release
   publish-release:
     docker:
