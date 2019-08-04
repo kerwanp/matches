@@ -1,0 +1,143 @@
+.container {
+  transition: .5s ease;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: none;
+  overflow: hidden;
+  &.show {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+.bridge-container {
+  padding: 40px;
+  h1 {
+    opacity: 0;
+    transform: translateY(150px);
+    animation: b-t-o .5s ease forwards;
+  }
+  p {
+    opacity: 0;
+    transform: translateY(150px);
+    animation: b-t-o .5s .5s ease forwards;
+  }
+  .hue-hub {
+    margin: 50px 0;
+    width: 200px;
+    height: 200px;
+
+    opacity: 0;
+    animation: o .5s 1s ease forwards;
+  }
+  .start-container {
+    button, .full-width {
+      transition: .5s ease;
+      opacity: 0;
+      z-index: 0;
+      pointer-events: none;
+      &.show {
+        opacity: 1;
+        z-index: 1;
+        pointer-events: initial;
+      }
+    }
+  }
+}
+
+.bar {
+  width: 6px;
+  height: 30px;
+  margin: 0 2px;
+
+  display: inline-block;
+  transform-origin: center;
+  animation: loading 1s ease-in-out infinite;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bar1 {
+  animation-delay: 0.1s;
+}
+
+.bar2 {
+  animation-delay: 0.2s;
+}
+
+.bar3 {
+  animation-delay: 0.3s;
+}
+
+.bar4 {
+  animation-delay: 0.2s;
+}
+
+.bar5 {
+  animation-delay: 0.1s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scaleY(0.1);
+
+  }
+
+  50% {
+    transform: scaleY(1);
+    background: #FFFFFF;
+  }
+
+  100% {
+    transform: scaleY(0.1);
+    background: transparent;
+  }
+}
+
+.tick {
+  stroke-dasharray: 29px;
+  stroke-dashoffset: 29px;
+  animation: draw .5s cubic-bezier(.25, .25, .25, 1) forwards;
+  animation-delay: .6s
+}
+
+.circle {
+  fill-opacity: 0;
+  stroke: #219a00;
+  stroke-width: 16px;
+  transform-origin: center;
+  transform: scale(0);
+  animation: grow 1s cubic-bezier(.25, .25, .25, 1.25) forwards;
+}
+
+@keyframes grow {
+  60% {
+    transform: scale(.8);
+    stroke-width: 4px;
+    fill-opacity: 0;
+  }
+  100% {
+    transform: scale(.9);
+    stroke-width: 8px;
+    fill-opacity: 1;
+    fill: #219a00;
+  }
+}
+
+@keyframes draw {
+  100% { stroke-dashoffset: 0; }
+}
+
+.svg-container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}

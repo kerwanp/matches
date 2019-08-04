@@ -1,0 +1,15 @@
+.window-bar {
+  width: 100%;
+  height: 25px;
+  padding: 0 10px;
+  background-color: #333333;
+  -webkit-app-region: drag;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  img {
+    -webkit-app-region: no-drag;
+    height: 10px;
+    cursor: pointer;
+  }
+}

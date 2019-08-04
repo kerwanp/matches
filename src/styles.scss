@@ -1,0 +1,61 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  background-color: #110C46;
+
+  font-family: Quicksand, sans-serif;
+
+  -webkit-user-select: none;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 4.5rem;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+}
+
+p {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.full-width {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes b-t-o {
+  from {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes o {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

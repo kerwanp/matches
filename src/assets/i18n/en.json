@@ -1,0 +1,12 @@
+{
+  "PAGES": {
+      "HOME": {
+          "TITLE": "App works !"
+      },
+      "BRIDGER": {
+          "WELCOME": "Welcome !",
+          "DESCRIPTION": "Here is the first step to automate your lights !<br/>We need you to sync your Philips Hue Hub with Matches !",
+          "START": "Let's go !"
+      }
+  }
+}
