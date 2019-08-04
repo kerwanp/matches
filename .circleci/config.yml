@@ -29,7 +29,7 @@ jobs:
           at: ./artifacts
       - run:
           name: "Publish Release"
-          command: ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${CIRCLE_TAG} ./artifacts/
+          command: ghr --token ${GITHUB_TOKEN} --username ${CIRCLE_PROJECT_USERNAME} --repository ${CIRCLE_PROJECT_REPONAME} --commitish ${CIRCLE_SHA1} --name "${CIRCLE_TAG}" ${CIRCLE_TAG} ./artifacts/
 
 workflows:
   version: 2
