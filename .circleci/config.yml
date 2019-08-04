@@ -38,9 +38,9 @@ workflows:
   main:
     jobs:
       - build:
-          - filters:
-              tags:
-                only: /.*/
+          filters:
+            tags:
+              only: /.*/
       - publish-release:
           requires:
             - build
@@ -48,4 +48,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /.*/
+              only: /^v.*/
